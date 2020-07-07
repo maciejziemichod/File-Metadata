@@ -3,6 +3,7 @@ import morgan from "morgan";
 import cors from "cors";
 import multer from "multer";
 import path from "path";
+import index from "./routes/index";
 
 // Init
 const app = express();
@@ -21,10 +22,14 @@ const upload = multer({ storage });
 app.use("/public", express.static(path.join(process.cwd(), "/dist/public")));
 
 // Index
-app.get("/", (req, res) =>
-  res.sendFile(path.join(process.cwd(), "/dist/views/index.html"))
-);
+app.use("/", index);
 
 // Listening
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+
+/* 
+    https://github.com/expressjs/multer
+    https://expressjs.com/en/starter/static-files.html
+    https://github.com/bradtraversy/storybooks
+*/
