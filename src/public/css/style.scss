@@ -5,9 +5,13 @@
   box-sizing: border-box;
 }
 
+// Variables
+$main-dark: #2d3e45;
+$submit: #19a69a;
+
 // Global
 body {
-  min-height: 100vh;
+  height: 90vh;
   background-image: linear-gradient(
     to right top,
     #74dcb8,
@@ -16,4 +20,144 @@ body {
     #36626b,
     #2d3e45
   );
+  overflow: hidden;
+}
+
+// Upload component
+.upload {
+  color: $main-dark;
+  background-color: #ffffff;
+  width: 60vw;
+  margin: auto;
+  padding: 6rem;
+  max-height: 100vh;
+  height: 80vh;
+  margin-top: 10vh;
+  box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__description {
+    flex: 2;
+    margin-bottom: 5rem;
+    border-bottom: 1px $main-dark solid;
+    padding-bottom: 3rem;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  &__subtitle {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  &__usage {
+    list-style: none;
+    margin-bottom: 1rem;
+  }
+
+  &__instruction {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  &__form-container {
+    flex: 1;
+  }
+
+  &__form {
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__input {
+    font-size: inherit;
+    margin-bottom: 1rem;
+  }
+
+  &__submit {
+    font-size: inherit;
+
+    padding: 0.5rem 2rem;
+    width: 100%;
+    background-color: $submit;
+    border: none;
+    border-radius: 2px;
+    color: #ffffff;
+    box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.45);
+  }
+}
+
+// Media query
+
+@media (max-width: 1000px) {
+  body {
+    height: 100vh;
+  }
+
+  .upload {
+    margin-top: 1vh;
+    height: 98vh;
+  }
+}
+
+@media (max-width: 740px) {
+  .upload {
+    width: 80vw;
+    padding: 3rem;
+
+    &__description {
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      flex: auto;
+    }
+
+    &__title {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    &__subtitle {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    &__usage {
+      margin-bottom: 0;
+    }
+
+    &__instruction {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    &__form-container {
+      width: 95%;
+      flex: auto;
+    }
+
+    &__form {
+      font-size: 0.8rem;
+    }
+
+    &__input {
+      margin: 0 auto 1rem auto;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .upload {
+    width: 90vw;
+  }
 }
