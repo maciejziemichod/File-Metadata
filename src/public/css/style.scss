@@ -1,5 +1,19 @@
+// Reset
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+// Global
+body {
+  min-height: 100vh;
+  background-image: linear-gradient(
+    to right top,
+    #74dcb8,
+    #51b3a6,
+    #3f8a8c,
+    #36626b,
+    #2d3e45
+  );
 }

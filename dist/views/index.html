@@ -9,7 +9,24 @@
 </head>
 
 <body>
-    <h1>hello world</h1>
+    <div class="upload">
+        <div class="upload__description">
+            <h1 class="upload__title">API Project: File Metadata Microservice</h1>
+            <h2 class="upload__subtitle">Usage</h2>
+            <ul class="upload__usage">
+                <li class="upload__instruction">You can submit a form object that includes a file upload.
+                </li>
+                <li class="upload__instruction">As a response you will receive JSON including the file name and size in
+                    bytes</li>
+            </ul>
+        </div>
+        <div class="upload__form-container">
+            <form action="/upload" class="upload__form" method="POST" enctype="multipart/form-data">
+                <input type="file" name="uploaded_file" class="upload__input" required>
+                <input type="submit" value="Upload" class="upload__submit">
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>
